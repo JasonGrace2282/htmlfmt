@@ -7,8 +7,11 @@ authors = [
 ]
 requires-python = ">=3.8"
 version = "1.0"
-dynamic = ["dependencies"]
 license = { file = "LICENSE" }
+dependencies = [
+  "bs4",
+  "html5lib",
+]
 
 [build-system]
 requires = ["setuptools>=61.0"]
