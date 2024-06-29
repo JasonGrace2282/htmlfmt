@@ -1,14 +1,16 @@
 from __future__ import annotations
 
 import argparse
-from typing import Sequence
+import sys
 from pathlib import Path
+from typing import Sequence
 
-from bs4 import BeautifulSoup as bs
+from bs4 import BeautifulSoup as bs  # noqa: N813
 from bs4.formatter import HTMLFormatter
 
+
 def fix_file(fname: Path, indent: int = 2) -> bool:
-    """Fix a file, returning whether it was modified or not"""
+    """Fix a file, returning whether it was modified or not."""
     original = fname.read_text()
     soup = bs(original, features="html5lib")
     formatter = HTMLFormatter(indent=indent)
@@ -18,15 +20,12 @@ def fix_file(fname: Path, indent: int = 2) -> bool:
         return True
     return False
 
+
 def main(argv: Sequence[str] | None = None) -> int:
     parser = argparse.ArgumentParser()
-    parser.add_argument('filenames', nargs='*', help='Filenames to fix')
+    parser.add_argument("filenames", nargs="*", help="Filenames to fix")
     parser.add_argument(
-        "--indent",
-        action="store",
-        type=int,
-        default=2,
-        help="The html indentation level per tag"
+        "--indent", action="store", type=int, default=2, help="The html indentation level per tag"
     )
 
     args = parser.parse_args()
@@ -38,5 +37,6 @@ def main(argv: Sequence[str] | None = None) -> int:
 
     return return_code
 
+
 if __name__ == "__main__":
-    exit(main())
+    sys.exit(main())

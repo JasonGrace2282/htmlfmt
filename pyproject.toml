@@ -119,4 +119,4 @@ line-ending = "lf"
 
 [tool.codespell]
 write-changes = true
-ignore-words-list = ""
+ignore-words-list = "bs"
