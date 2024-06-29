@@ -28,7 +28,7 @@ repos:
         name: ruff lint
       - id: ruff-format
   - repo: https://github.com/JasonGrace2282/htmlfmt
-    rev: HEAD
+    rev: v0.1.0
     hooks:
       - id: htmlfmt
         files: ^.*\.html$
