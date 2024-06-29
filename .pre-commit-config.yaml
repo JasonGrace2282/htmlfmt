@@ -31,4 +31,4 @@ repos:
     rev: HEAD
     hooks:
       - id: htmlfmt
-        files: ^.*\.html
+        files: ^.*\.html$
