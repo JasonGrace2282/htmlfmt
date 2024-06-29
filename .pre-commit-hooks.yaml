@@ -1,0 +1,6 @@
+- id: htmlfmt
+  name: format html
+  description: format html to look nicer
+  entry: htmlfmt
+  language: python
+  stages: [commit, push, manual]
